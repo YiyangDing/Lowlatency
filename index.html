@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Low-latency VC demos</title>
+<style type="text/css">
+</style></head>
+<body>
+<h2><strong>Audio Samples from "A Study on Low-latency Recognition-synthesis Based  Any-to-one Voice Conversion</strong>"</h2>
+<h3>Paper:</h3>
+<p> A Study on Low-latency Recognition-synthesis Based  Any-to-one Voice Conversion</a> (Submitted to Interspeech 2022)</p>
+
+<h3>Authors: </h3>
+Yi-Yang Ding, Li-Juan Liu, Yu Hu, Zhen-Hua Ling
+
+<h3>Abstract: </h3>
+Some application scenarios of voice conversion, such as identity disguise in voice communication, require low-latency generation of converted speech.
+In traditional conversion methods, usually both history and future information in input speech is utilized to predict the converted acoustic features at each frame.
+which leads to long latency of voice conversion.
+Therefore, this paper proposes a low-latency recognition-synthesis based any-to-one voice conversion method.
+Bottleneck (BN) features are extracted by an automatic speech recognition (ASR) acoustic model for frame-by-frame phoneme classification. A minimum mutual information (MMI) loss is introduced to reduce the speaker information in BNs caused by the low-latency configuration.
+The BN features are sent into a speaker-dependent low-latency LSTM-based acoustic feature predictor and the speech waveforms are reconstructed by an LPCNet vocoder from predicted acoustic features.
+The total latency of our proposed voice conversion method is 190ms, which is less than the delay requirement for comfortable communication in ITU-T G.114. 
+The naturalness of converted speech is compararble with the upper-bound model trained without low-latency constraints.
+<p>&nbsp;</p>
+<hr>
+<h3>VC demos of one target speaker.</h3>
+<h3>&nbsp;</h3>
+<table width="763" border="1">
+  <tbody><tr>
+    <td width="120" nowrap="nowrap">Reference</td>
+  </tr>
+  <tr>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/ref/1.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/ref/2.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/ref/3.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/ref/4.wav" type="audio/wav">
+    </audio></td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+  
+<table width="763" border="1">
+  <tbody><tr>
+    <td width="120" nowrap="nowrap">Source</td>
+    <td width="120" nowrap="nowrap">UBLSTM_CE</td>
+    <td width="120" nowrap="nowrap">Proposed</td>
+    <td width="120" nowrap="nowrap">Upper-bound</td>
+  </tr>
+  <tr>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/src/1.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/UBLSTM_CE/1.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Transformer_CE_MI/1.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Upper/1.wav" type="audio/wav">
+    </audio></td>
+  </tr>
+  <tr>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/src/2.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/UBLSTM_CE/2.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Transformer_CE_MI/2.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Upper/2.wav" type="audio/wav">
+    </audio></td>
+  </tr>
+  <tr>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/src/3.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/UBLSTM_CE/3.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Transformer_CE_MI/3.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Upper/3.wav" type="audio/wav">
+    </audio></td>
+  </tr>
+  <tr>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/src/4.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/UBLSTM_CE/4.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Transformer_CE_MI/4.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Upper/4.wav" type="audio/wav">
+    </audio></td>
+  </tr>
+  <tr>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/src/5.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/UBLSTM_CE/5.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Transformer_CE_MI/5.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Upper/5.wav" type="audio/wav">
+    </audio></td>
+  </tr>
+  <tr>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/src/6.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/UBLSTM_CE/6.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Transformer_CE_MI/6.wav" type="audio/wav">
+    </audio></td>
+    <td><audio controls="controls" controlsList="nodownload" οncοntextmenu="return false">
+        <source src="wav/Upper/6.wav" type="audio/wav">
+    </audio></td>
+  </tr>
+</tbody></table>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body></html>
